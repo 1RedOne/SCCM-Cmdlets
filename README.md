@@ -1,7 +1,7 @@
 # SCCM-Cmdlets
 Some helper PowerShell functions for SCCM, to allow you to jump into a remote SCCM client logs folder, or to reset-policy on a remote machine.  
 
-The reset-Policy function includes [steps outlined here](https://social.technet.microsoft.com/Forums/systemcenter/en-US/1c1a640f-179c-4b72-bfe3-ab5d928454bf/software-update-error-0x80004005), to fix Software Update status unknown issues (0x8004005).
+The reset-Policy function includes [steps outlined here](https://social.technet.microsoft.com/Forums/systemcenter/en-US/1c1a640f-179c-4b72-bfe3-ab5d928454bf/software-update-error-0x80004005), to fix Software Update status unknown issues (0x8004005).  It also includes the PowerShell steps for a remote WMI reset, [as outlined by Tompa on his blog](http://tompaps.blogspot.com/2012/12/machine-policy-retrieval-sccm.html).
 
 ## What functions are here?
 
