@@ -23,4 +23,24 @@ Removes a blocking Machine.Pol item if it exists (From Group Policy) and also tr
       Requesting remote Policy Request     [OK]
       Requesting remote Policy Application [OK]
 
-More to come later
+####MoveAllContent.ps1
+
+A modified version of Nikolaj's awesome [Update the content path of all Apps ins ConfigMgr with PowerShell tool](http://www.scconfigmgr.com/2013/07/25/update-the-content-path-of-all-applications-in-configmgr-2012-with-powershell/).  It now detectes a directory first, before changing content path, and then creates and moves files into the directory.
+
+####Get-ContentTarget
+
+A modified version of David O'Brien's [Find Content not on a DP Group tool](http://www.david-obrien.net/2013/10/configmgr-find-content-distributed-dp-groups/).  It will not emit PowerShell objects for easy sorting, to determine what kind of content may not be targeting a DP Group.
+
+    $packages = Get-ContentTarget.ps1
+    $packages | Where Type -eq "Boot Image Package"
+    
+    Type                                        Name                                                                                                                 
+    ----                                        ----                                                                                                                 
+    Boot Image Package                          MDT Boot x64 - TLA                                                                                                   
+    Boot Image Package                          Embedded_x64 - TLA                                                                                                 
+    Boot Image Package                          HPClientBootImage8815f669 - TLA                                                                                      
+    Boot Image Package                          HPClientBootImage73cd3d1 - TLA                                                                                       
+    Boot Image Package                          Boot image (x86)                                                                                    
+    Boot Image Package                          Boot image (x64)                                                                                                     
+    Boot Image Package                          B&B Standard Boot Image                                                                                              
+    Boot Image Package                          DESKTOPS, Standard Boot Image}
