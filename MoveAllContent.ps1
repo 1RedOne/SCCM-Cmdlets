@@ -2,10 +2,10 @@
 [System.Reflection.Assembly]::LoadFrom((Join-Path (Get-Item $env:SMS_ADMIN_UI_PATH).Parent.FullName "Microsoft.ConfigurationManagement.ApplicationManagement.Extender.dll")) | Out-Null
 [System.Reflection.Assembly]::LoadFrom((Join-Path (Get-Item $env:SMS_ADMIN_UI_PATH).Parent.FullName "Microsoft.ConfigurationManagement.ApplicationManagement.MsiInstaller.dll")) | Out-Null
 
-$SiteServer = "clasccm01"
+$SiteServer = "Server01"
 $SiteCode = "law"
-$CurrentContentPath = "clasccm02"
-$UpdatedContentPath = "clasccm01"
+$CurrentContentPath = "Server02"
+$UpdatedContentPath = "Server01"
 
 $Applications = Get-WmiObject -ComputerName $SiteServer -Namespace root\SMS\site_$SiteCode -class SMS_Application | Where-Object {$_.IsLatest -eq $True}
 $ApplicationCount = $Applications.Count
